@@ -26,16 +26,26 @@ public class FizzBuzzTest {
     @Test
     public void test3IsFizz() throws Exception {
 
-        String[] numbers = FizzBuzz.EmitNumbers(3, 3);
-
-        Assert.assertEquals("Fizz", numbers[0]);
+        Assert.assertEquals("Fizz",singleResponse(3));
     }
 
     @Test
     public void test25IsBuzz() throws Exception {
 
-        String[] numbers = FizzBuzz.EmitNumbers(25, 25);
+        Assert.assertEquals("Buzz", singleResponse(25));
+    }
 
-        Assert.assertEquals("Buzz", numbers[0]);
+
+    @Test
+    public void test60IsFizzBuzz() throws Exception {
+
+        Assert.assertEquals("FizzBuzz", singleResponse(60));
+    }
+
+
+    private String singleResponse(int i) {
+        String[] numbers = FizzBuzz.EmitNumbers(i, i);
+
+        return numbers[0];
     }
 }
