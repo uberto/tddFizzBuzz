@@ -16,8 +16,12 @@ public class FizzBuzz {
 
         List<String> res = new ArrayList<String>();
         for (int i = from; i <= to; i++) {
-            res.add(new Integer(i).toString());
+            res.add(processNumber(i).toString());
         }
         return res.toArray(new String[res.size()]);
+    }
+
+    private static Response processNumber(int i) {
+        return new Response(i);
     }
 }

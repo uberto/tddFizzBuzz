@@ -22,4 +22,13 @@ public class FizzBuzzTest {
         Assert.assertEquals("1", numbers[0]);
         Assert.assertEquals("100", numbers[99]);
     }
+
+    @Test
+    public void test3IsFizz() throws Exception {
+
+        String[] numbers = FizzBuzz.EmitNumbers(3, 3);
+
+        Assert.assertEquals(1, numbers.length);
+        Assert.assertEquals("Fizz", numbers[0]);
+    }
 }
