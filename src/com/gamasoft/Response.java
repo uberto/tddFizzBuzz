@@ -16,12 +16,22 @@ public class Response {
 
     @Override
     public String toString() {
-        if (number % 3 == 0)
-            return "Fizz";
+        String r = "";
 
+        r = fizz() + buzz();
+
+        return "" + r + number;
+    }
+
+    private String buzz() {
         if (number % 5 == 0)
-            return "Buzz";
+            return  "Buzz";
+        return "";
+    }
 
-        return "" + number;
+    private String fizz() {
+        if (number % 3 == 0)
+            return  "Fizz";
+        return "";
     }
 }
