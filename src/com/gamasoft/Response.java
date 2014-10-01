@@ -20,7 +20,15 @@ public class Response {
 
         r = fizz() + buzz();
 
-        return "" + r + number;
+        return firstNotEmpty(r, intToStr());
+    }
+
+    private String firstNotEmpty(String s1, String s2) {
+        return s1.isEmpty() ? s2 : s1;
+    }
+
+    private String intToStr() {
+        return "" + number;
     }
 
     private String buzz() {
