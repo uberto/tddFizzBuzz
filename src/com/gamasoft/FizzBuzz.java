@@ -1,5 +1,8 @@
 package com.gamasoft;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: uberto
@@ -8,9 +11,13 @@ package com.gamasoft;
  * To change this template use File | Settings | File Templates.
  */
 public class FizzBuzz {
-    public static void Emit(int from, int to) {
-        for (int i = from; i < to; i++) {
-            System.out.println(i);
+
+    public static String[] EmitNumbers(int from, int to) {
+
+        List<String> res = new ArrayList<String>();
+        for (int i = from; i <= to; i++) {
+            res.add(new Integer(i).toString());
         }
+        return res.toArray(new String[res.size()]);
     }
 }
