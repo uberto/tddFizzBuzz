@@ -1,5 +1,9 @@
 package com.gamasoft;
 
+import static com.gamasoft.Operations.firstNotEmpty;
+import static com.gamasoft.Operations.intToStr;
+import static com.gamasoft.Operations.valueIfMod;
+
 /**
  * Created with IntelliJ IDEA.
  * User: uberto
@@ -16,30 +20,19 @@ public class Response {
 
     @Override
     public String toString() {
-        String r = "";
-
-        r = fizz() + buzz();
-
-        return firstNotEmpty(r, intToStr());
+        return firstNotEmpty(fizz() + buzz(), intToStr(number));
     }
 
-    private String firstNotEmpty(String s1, String s2) {
-        return s1.isEmpty() ? s2 : s1;
-    }
 
-    private String intToStr() {
-        return "" + number;
-    }
 
     private String buzz() {
-        if (number % 5 == 0)
-            return  "Buzz";
-        return "";
+
+        return valueIfMod(number, 5, "Buzz");
     }
 
+
+
     private String fizz() {
-        if (number % 3 == 0)
-            return  "Fizz";
-        return "";
+        return valueIfMod(number, 3, "Fizz");
     }
 }
